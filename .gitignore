@@ -1,0 +1,7 @@
+BKMainStructureModule.xcodeproj/xcuserdata/
+BKMainStructureModule.xcworkspace/
+Pods/
+*.swp
+Podfile.lock
+.DS_Store
+BKMainStructureModule.xcodeproj/project.xcworkspace/xcuserdata/
