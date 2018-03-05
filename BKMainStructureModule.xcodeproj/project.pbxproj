@@ -24,6 +24,7 @@
 		9F045ECB1FFCC25B00CC0F6C /* TestFourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F045ECA1FFCC25B00CC0F6C /* TestFourController.swift */; };
 		9F045ED31FFDC5E800CC0F6C /* UIViewController+SolveBackButtonTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F045ED21FFDC5E800CC0F6C /* UIViewController+SolveBackButtonTitle.swift */; };
 		9F2DD020200BA2080092760B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DD01F200BA2080092760B /* Extensions.swift */; };
+		9F45EB4B204D399600ECFB74 /* BKMainStructureModule.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9F45EB4A204D399600ECFB74 /* BKMainStructureModule.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9F045ECA1FFCC25B00CC0F6C /* TestFourController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFourController.swift; sourceTree = "<group>"; };
 		9F045ED21FFDC5E800CC0F6C /* UIViewController+SolveBackButtonTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SolveBackButtonTitle.swift"; sourceTree = "<group>"; };
 		9F2DD01F200BA2080092760B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9F45EB4A204D399600ECFB74 /* BKMainStructureModule.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BKMainStructureModule.podspec; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				9F045EA81FFC70E800CC0F6C /* Assets.xcassets */,
 				9F045EAA1FFC70E800CC0F6C /* LaunchScreen.storyboard */,
 				9F045EAD1FFC70E800CC0F6C /* Info.plist */,
+				9F45EB4A204D399600ECFB74 /* BKMainStructureModule.podspec */,
 				9F045EC41FFCC23400CC0F6C /* TestOneController.swift */,
 				9F045EC61FFCC24000CC0F6C /* TestTwoController.swift */,
 				9F045EC81FFCC24F00CC0F6C /* TestThreeController.swift */,
@@ -169,6 +172,7 @@
 			files = (
 				9F045EAC1FFC70E800CC0F6C /* LaunchScreen.storyboard in Resources */,
 				9F045EA91FFC70E800CC0F6C /* Assets.xcassets in Resources */,
+				9F45EB4B204D399600ECFB74 /* BKMainStructureModule.podspec in Resources */,
 				9F045EA71FFC70E800CC0F6C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
