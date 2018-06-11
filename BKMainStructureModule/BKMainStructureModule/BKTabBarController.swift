@@ -8,11 +8,11 @@
 
 import UIKit
 
-class BKTabBarController: UITabBarController {
+public class BKTabBarController: UITabBarController {
     
     static let shared = BKTabBarController()
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         setValue(BKTabBar(), forKeyPath: "tabBar")
     }
@@ -24,7 +24,7 @@ class BKTabBarController: UITabBarController {
     ///   - normalImgName: 正常图片名
     ///   - selectedImgName: 选中图片名
     ///   - isNeedNavController: 标题
-    func addChildVC(vc: UIViewController, title: String, normalImgName: String, selectedImgName: String, isNeedNavController: Bool) {
+    public func addChildVC(vc: UIViewController, title: String, normalImgName: String, selectedImgName: String, isNeedNavController: Bool) {
         if isNeedNavController {
             let nav = BKNavigationController(rootViewController: vc)
             nav.tabBarItem = UITabBarItem(title: title, image: UIImage.originImage(named: normalImgName), selectedImage: UIImage.originImage(named: selectedImgName))

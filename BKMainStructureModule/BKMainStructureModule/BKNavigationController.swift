@@ -11,9 +11,10 @@ import UIKit
 class BKNavigationController: UINavigationController {
     
     fileprivate static let onceToken = "bluajack"
-    
+    fileprivate var isPushing: Bool = false
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.delegate = self
     }
     
     override init(rootViewController: UIViewController) {
@@ -32,6 +33,14 @@ class BKNavigationController: UINavigationController {
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        
+        if self.isPushing {
+//            print("拦截")
+            return
+        }else {
+            self.isPushing = true
+        }
+        
         if childViewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
         }
@@ -51,6 +60,12 @@ class BKNavigationController: UINavigationController {
 //        return topViewController
 //    }
     
+}
+
+extension BKNavigationController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        self.isPushing = false
+    }
 }
 
 // MARK:- 配置navbar
