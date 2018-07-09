@@ -34,6 +34,19 @@ import UIKit
         BKTabBarController.shared.addChildVC(vc: vc, title: title, normalImgName: normalImgName, selectedImgName: selectedImgName, isNeedNavController: isNeedNavController)
     }
     
+    /// 添加子控制器
+    ///
+    /// - Parameters:
+    ///   - vc: 需要添加的控制器(包装成导航栏)
+    ///   - title: 标题
+    ///   - normalImage: 正常图片
+    ///   - selectedImage: 选中图片
+    ///   - isNeedNavController: 是否需要导航栏
+    public class func addChildVC(vc: UIViewController, title: String, normalImage: UIImage?, selectedImage: UIImage?, isNeedNavController: Bool) {
+        BKTabBarController.shared.addChildVC(vc: vc, title: title, normalImage: normalImage, selectedImage: selectedImage, isNeedNavController: isNeedNavController)
+    }
+    
+    
     /// 设置全局导航栏背景图片
     ///
     /// - Parameter img: 背景图片

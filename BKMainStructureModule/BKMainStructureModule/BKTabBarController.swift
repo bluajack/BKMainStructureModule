@@ -33,4 +33,23 @@ public class BKTabBarController: UITabBarController {
             self.addChildViewController(vc)
         }
     }
+    
+    
+    /// 添加子控制器
+    ///
+    /// - Parameters:
+    ///   - vc: 需要添加的控制器(包装成导航栏)
+    ///   - title: 标题
+    ///   - normalImage: 正常图片
+    ///   - selectedImage: 选中图片
+    ///   - isNeedNavController: 是否需要导航栏
+    public func addChildVC(vc: UIViewController, title: String, normalImage: UIImage?, selectedImage: UIImage?, isNeedNavController: Bool) {
+        if isNeedNavController {
+            let nav = BKNavigationController(rootViewController: vc)
+            nav.tabBarItem = UITabBarItem(title: title, image: normalImage?.withRenderingMode(.alwaysOriginal), selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
+            self.addChildViewController(nav)
+        }else {
+            self.addChildViewController(vc)
+        }
+    }
 }
