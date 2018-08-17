@@ -93,3 +93,18 @@ extension BKNavigationController {
     }
 }
 
+/* https://blog.csdn.net/deft_mkjing/article/details/51705021
+ 为什么要重写这个东西呢
+ 
+ 这个方法默认返回值是nil。也就是当我们调用setNeedsStatusBarAppearanceUpdate的时候，系统会调用container（容器控制器）的preferredStatusBarStyle这个方法（app.window.rootViewController的preferred的方法，一般我们用UINavigationController或者UITabBarController来做container），也就是根本不会调用子控制器（我们所看到的UIViewcontroller）的preferredStatusBarStyle方法。这个时候- (UIViewController *)childViewControllerForStatusBarStyle:就派上用场了
+ */
+extension UINavigationController {
+    open override var childViewControllerForStatusBarStyle: UIViewController? {
+        return self.visibleViewController
+    }
+    
+    open override var childViewControllerForStatusBarHidden: UIViewController? {
+        return self.visibleViewController
+    }
+}
+
