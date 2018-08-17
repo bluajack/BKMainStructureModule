@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BKNavigationController: UINavigationController {
+open class BKNavigationController: UINavigationController {
     
     fileprivate static let onceToken = "bluajack"
     fileprivate var isPushing: Bool = false
@@ -22,17 +22,17 @@ class BKNavigationController: UINavigationController {
         defaultConfigNavBar()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         // 解决iOS 11 左返回文字隐藏问题
         UIViewController.perpareSwizzLifeCycle()
     }
     
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    override open func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
         if self.isPushing {
 //            print("拦截")
@@ -52,7 +52,7 @@ class BKNavigationController: UINavigationController {
     }
     
     // 设置状态栏 (单独设置某个控制器的navigationBar.barStyle，可以改变其状态栏)
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
         return MainStructureApi.statusBarStyle
     }
     // (告诉系统不要调用我自己的preferredStatusBarStyle)
@@ -63,7 +63,7 @@ class BKNavigationController: UINavigationController {
 }
 
 extension BKNavigationController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         self.isPushing = false
     }
 }

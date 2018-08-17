@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class BKTabBarController: UITabBarController {
+open class BKTabBarController: UITabBarController {
     
     static let shared = BKTabBarController()
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         setValue(BKTabBar(), forKeyPath: "tabBar")
     }
