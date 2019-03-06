@@ -33,10 +33,10 @@ class BKTabBar: UITabBar {
     ///   - selectedColorStr: 选中字体颜色
     ///   - fontSize: 字体大小
     class func setGlobalTabBarItemTitleAttributes(normalColorStr: String, selectedColorStr: String, fontSize: CGFloat) {
-        let titleDic = [NSAttributedStringKey.foregroundColor: UIColor(hex: normalColorStr),
-                        NSAttributedStringKey.font: UIFont.systemFont(ofSize: fontSize)]
-        let titleDic_s = [NSAttributedStringKey.foregroundColor: UIColor(hex: selectedColorStr),
-                        NSAttributedStringKey.font: UIFont.systemFont(ofSize: fontSize)]
+        let titleDic = [NSAttributedString.Key.foregroundColor: UIColor(hex: normalColorStr),
+                        NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize)]
+        let titleDic_s = [NSAttributedString.Key.foregroundColor: UIColor(hex: selectedColorStr),
+                          NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize)]
 //        let tabBarItem = UITabBarItem.appearance(whenContainedInInstancesOf: [BKTabBarController.self])
         let tabBarItem = UITabBarItem.appearance()
         tabBarItem.setTitleTextAttributes(titleDic, for: .normal)

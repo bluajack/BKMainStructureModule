@@ -41,7 +41,7 @@ open class BKNavigationController: UINavigationController {
             self.isPushing = true
         }
         
-        if childViewControllers.count > 0 {
+        if children.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
         }
         super.pushViewController(viewController, animated: animated)
@@ -76,7 +76,7 @@ extension BKNavigationController {
             let navBar = UINavigationBar.appearance()
             navBar.barTintColor = UIColor(hex: "#f55848")
             navBar.tintColor = UIColor.white // tintColor影响整个navBar的颜色
-            navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+            navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
             
             // 设置左返回按钮
             if #available(iOS 11.0, *) {
@@ -87,7 +87,7 @@ extension BKNavigationController {
                 let backButtonImage = UIImage(named: "back_white")?.resizableImage(withCapInsets: UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 0))
                 let barButtonItem = UIBarButtonItem.appearance()
                 barButtonItem.setBackButtonBackgroundImage(backButtonImage, for: .normal, barMetrics: .default)
-                barButtonItem.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), for: .default)
+                barButtonItem.setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 0, vertical: -60), for: .default)
             }
         }
     }
@@ -99,11 +99,11 @@ extension BKNavigationController {
  这个方法默认返回值是nil。也就是当我们调用setNeedsStatusBarAppearanceUpdate的时候，系统会调用container（容器控制器）的preferredStatusBarStyle这个方法（app.window.rootViewController的preferred的方法，一般我们用UINavigationController或者UITabBarController来做container），也就是根本不会调用子控制器（我们所看到的UIViewcontroller）的preferredStatusBarStyle方法。这个时候- (UIViewController *)childViewControllerForStatusBarStyle:就派上用场了
  */
 extension UINavigationController {
-    open override var childViewControllerForStatusBarStyle: UIViewController? {
+    open override var childForStatusBarStyle: UIViewController? {
         return self.visibleViewController
     }
     
-    open override var childViewControllerForStatusBarHidden: UIViewController? {
+    open override var childForStatusBarHidden: UIViewController? {
         return self.visibleViewController
     }
 }

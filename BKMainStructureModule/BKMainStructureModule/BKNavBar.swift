@@ -31,8 +31,8 @@ class BKNavBar: UINavigationBar {
 //        let nav = UINavigationBar.appearance(whenContainedInInstancesOf: [BKNavigationController.self])
         let nav = UINavigationBar.appearance()
         // 设置导航栏颜色
-        nav.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(hex: textColorStr),
-                                   NSAttributedStringKey.font:UIFont.systemFont(ofSize: sizeFont)]
+        nav.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(hex: textColorStr),
+                                   NSAttributedString.Key.font:UIFont.systemFont(ofSize: sizeFont)]
     }
     
     
@@ -53,7 +53,7 @@ class BKNavBar: UINavigationBar {
             let backButtonImage = originImg?.resizableImage(withCapInsets: UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 0))
             let barButtonItem = UIBarButtonItem.appearance()
             barButtonItem.setBackButtonBackgroundImage(backButtonImage, for: .normal, barMetrics: .default)
-            barButtonItem.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), for: .default)
+            barButtonItem.setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 0, vertical: -60), for: .default)
         }
     }
     

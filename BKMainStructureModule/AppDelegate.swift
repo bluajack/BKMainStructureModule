@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         self.window?.rootViewController = MainStructureApi.rootTabBarVC
         MainStructureApi.addChildVC(vc: TestOneController(), title: "测试1", normalImgName: "testone_n", selectedImgName: "testone_s", isNeedNavController: true)

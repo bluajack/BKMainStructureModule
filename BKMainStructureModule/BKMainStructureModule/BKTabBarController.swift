@@ -28,9 +28,9 @@ open class BKTabBarController: UITabBarController {
         if isNeedNavController {
             let nav = BKNavigationController(rootViewController: vc)
             nav.tabBarItem = UITabBarItem(title: title, image: UIImage.originImage(named: normalImgName), selectedImage: UIImage.originImage(named: selectedImgName))
-            self.addChildViewController(nav)
+            self.addChild(nav)
         }else {
-            self.addChildViewController(vc)
+            self.addChild(vc)
         }
     }
     
@@ -47,9 +47,9 @@ open class BKTabBarController: UITabBarController {
         if isNeedNavController {
             let nav = BKNavigationController(rootViewController: vc)
             nav.tabBarItem = UITabBarItem(title: title, image: normalImage?.withRenderingMode(.alwaysOriginal), selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
-            self.addChildViewController(nav)
+            self.addChild(nav)
         }else {
-            self.addChildViewController(vc)
+            self.addChild(vc)
         }
     }
 }
