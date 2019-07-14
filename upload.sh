@@ -17,5 +17,5 @@ git add .
 git commit -am ${NewVersionNumber}
 git tag ${NewVersionNumber}
 git push origin master --tags
-cd ~/.cocoapods/repos/bluajackPrivatePods && git pull origin master && cd - && pod repo push bluajackPrivatePods BKMainStructureModule.podspec --verbose --allow-warnings --use-libraries
+cd ~/.cocoapods/repos/bluajackPrivatePods && git pull origin master && cd - && pod repo push bluajackPrivatePods BKMainStructureModule.podspec --verbose --allow-warnings
 
