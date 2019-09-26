@@ -34,12 +34,17 @@ open class BKNavigationController: UINavigationController {
     
     override open func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
-        if self.isPushing {
-//            print("拦截")
-            return
+        if #available(iOS 13.0, *) {
         }else {
-            self.isPushing = true
+            if self.isPushing {
+            //            print("拦截")
+                        return
+                    }else {
+                        self.isPushing = true
+                    }
         }
+        
+        
         
         if children.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
