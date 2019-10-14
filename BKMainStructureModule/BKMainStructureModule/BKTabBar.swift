@@ -13,6 +13,12 @@ class BKTabBar: UITabBar {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+        // 解决pushj或present时UITabBarItem字体颜色变化
+        // 解决UITabBarItem正常颜色字体设置不成功
+        if #available(iOS 13.0, *) {
+            self.tintColor = .white
+            self.barTintColor = .white
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
